@@ -6,17 +6,28 @@ import pytest
 
 from tvzen.core.adb import AdbClient, Device
 from tvzen.core.engine import Engine, Plan
-from tvzen.core.policies import Risk
+from tvzen.core.policies import Category, Risk
 from tvzen.core.snapshot import Snapshot
 
+# 模拟一台 Google TV 的包列表：全部使用真实包名（来自 227 份社区清单数据库），
+# 未知包 com.vendor.analyticssdk / com.example.updater 用于验证启发式与放过路径。
 FAKE_PACKAGES = [
-    "com.google.android.ads.tv",
-    "com.google.android.tvrecommendations",
-    "com.xiaomi.tv.push",
-    "com.vendor.analyticssdk",
+    "com.google.android.tvrecommendations",   # 已知 PROMO / SAFE（89 台设备）
+    "com.google.android.feedback",            # 已知 TELEMETRY / SAFE（167 台设备）
+    "tv.samba.ssm",                           # 已知 TELEMETRY / SAFE（ACR 观看追踪）
+    "com.tcl.esticker",                       # 已知 BLOAT / SAFE（49 台设备）
+    "com.google.android.katniss",             # 社区冲突 → CAUTION
+    "com.google.android.youtube.tv",          # 用户应用 → CAUTION
+    "com.google.android.tvlauncher",          # 原生气桌面 → CAUTION
+    "com.netflix.ninja",                      # 用户应用 → CAUTION
+    "com.vendor.analyticssdk",                # 启发式命中 TELEMETRY
+    "com.example.updater",                    # 未命中，放过
+    # never-touch 白名单
     "com.android.systemui",
-    "com.google.android.tvlauncher",
-    "com.netflix.ninja",
+    "com.android.settings",
+    "com.android.vending",
+    "com.google.android.gms",
+    "com.android.location.fused",
 ]
 
 
@@ -64,16 +75,27 @@ class TestScan:
         eng, _ = engine
         plan, result = eng.scan("serial123")
         pkgs = {v.package for v in plan.targets}
-        assert "com.google.android.ads.tv" in pkgs
+        assert "com.google.android.tvrecommendations" in pkgs
+        assert "tv.samba.ssm" in pkgs
         assert "com.vendor.analyticssdk" in pkgs
         assert "com.android.systemui" not in pkgs      # 白名单
-        assert "com.netflix.ninja" not in pkgs          # 未命中
+        assert "com.example.updater" not in pkgs       # 未命中规则
+        assert "com.netflix.ninja" in pkgs             # 用户应用 → CAUTION 仍入计划
         assert plan.total_packages == len(FAKE_PACKAGES)
+
+    def test_scan_safe_only_excludes_caution(self, engine):
+        eng, _ = engine
+        plan, _ = eng.scan("serial123", include_caution=False)
+        pkgs = {v.package for v in plan.targets}
+        assert "com.netflix.ninja" not in pkgs         # CAUTION 被排除
+        assert "com.google.android.katniss" not in pkgs
+        assert "com.google.android.tvrecommendations" in pkgs
 
     def test_scan_category_filter(self, engine):
         eng, _ = engine
-        plan, _ = eng.scan("serial123", categories={"telemetry"})
-        assert all(v.category.value == "telemetry" for v in plan.targets)
+        plan, _ = eng.scan("serial123", categories={Category.TELEMETRY})
+        assert plan.targets, "telemetry 类别不应为空"
+        assert all(v.category is Category.TELEMETRY for v in plan.targets)
 
 
 class TestApply:
