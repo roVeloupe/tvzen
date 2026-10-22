@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tvzen"
+version = "0.1.0"
+description = "Your TV, finally yours. One command to strip ads, bloatware and telemetry from Android TV / Google TV / Fire TV."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "roVeloupe" }]
+keywords = ["android-tv", "google-tv", "fire-tv", "debloat", "adb", "remove-ads"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop Users",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/roVeloupe/tvzen"
+Issues = "https://github.com/roVeloupe/tvzen/issues"
+
+[project.scripts]
+tvzen = "tvzen.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tvzen*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
