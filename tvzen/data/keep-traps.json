@@ -1,0 +1,1056 @@
+{
+ "source": "Gathin23/cleanyourtv — KEEP annotations",
+ "count": 210,
+ "packages": [
+  {
+   "package": "com.google.android.apps.mediashell",
+   "devices": 29,
+   "comment": "Chromecast"
+  },
+  {
+   "package": "com.google.android.tvlauncher",
+   "devices": 24,
+   "comment": "stock launcher, replaced by launcher/ in this repo"
+  },
+  {
+   "package": "com.google.android.katniss",
+   "devices": 17,
+   "comment": "Google Assistant voice"
+  },
+  {
+   "package": "com.google.android.tv.remote.service",
+   "devices": 15,
+   "comment": "phone remote"
+  },
+  {
+   "package": "com.google.android.apps.tv.launcherx",
+   "devices": 14,
+   "comment": "build-and-install.sh disables it; 182 MB across two processes at idle"
+  },
+  {
+   "package": "com.google.android.youtube.tvmusic",
+   "devices": 13,
+   "comment": "kept"
+  },
+  {
+   "package": "com.amazon.amazonvideo.livingroom",
+   "devices": 12,
+   "comment": "Prime Video"
+  },
+  {
+   "package": "com.netflix.ninja",
+   "devices": 10,
+   "comment": "kept"
+  },
+  {
+   "package": "com.google.android.youtube.tv",
+   "devices": 10,
+   "comment": "kept"
+  },
+  {
+   "package": "com.tcl.ttvs",
+   "devices": 8,
+   "comment": "firmware updater (see quirks)"
+  },
+  {
+   "package": "com.tcl.inputmethod.international",
+   "devices": 8,
+   "comment": "keyboard"
+  },
+  {
+   "package": "au.com.stan.and",
+   "devices": 8,
+   "comment": "Stan"
+  },
+  {
+   "package": "com.google.android.apps.tv.dreamx",
+   "devices": 8,
+   "comment": "ambient screensaver; set screensaver_components first"
+  },
+  {
+   "package": "com.tcl.airplay2",
+   "devices": 8,
+   "comment": "AirPlay, together with the next line"
+  },
+  {
+   "package": "com.google.android.tungsten.setupwraith",
+   "devices": 7,
+   "comment": "owns the Wi-Fi saved during setup"
+  },
+  {
+   "package": "com.tcl.miracast",
+   "devices": 7,
+   "comment": "screen mirroring"
+  },
+  {
+   "package": "com.amazon.device.crashmanager",
+   "devices": 6,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.google.android.backdrop",
+   "devices": 6,
+   "comment": "ambient screensaver"
+  },
+  {
+   "package": "com.tcl.tvinput",
+   "devices": 6,
+   "comment": "Live TV tuner + HDMI inputs"
+  },
+  {
+   "package": "com.tcl.autopair",
+   "devices": 6,
+   "comment": "Bluetooth remote auto-pairing"
+  },
+  {
+   "package": "com.tcl.tcl_bt_rcu_service",
+   "devices": 6,
+   "comment": "Bluetooth remote"
+  },
+  {
+   "package": "com.tcl.keyhelp",
+   "devices": 6,
+   "comment": "virtual keys"
+  },
+  {
+   "package": "com.tcl.system.server",
+   "devices": 6,
+   "comment": "remote-key plumbing"
+  },
+  {
+   "package": "com.tcl.settings",
+   "devices": 6,
+   "comment": "settings app"
+  },
+  {
+   "package": "tv.wuaki.apptv",
+   "devices": 6,
+   "comment": "Rakuten TV"
+  },
+  {
+   "package": "com.mediatek.airplaydaemon",
+   "devices": 6,
+   "comment": ""
+  },
+  {
+   "package": "com.netflix.tokenmanager",
+   "devices": 6,
+   "comment": ""
+  },
+  {
+   "package": "com.amazon.device.logmanager",
+   "devices": 5,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.amazon.diode",
+   "devices": 5,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.fireos.usagestats.proxy",
+   "devices": 5,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.amazon.ftvads.deeplinking",
+   "devices": 5,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.tcl.tv",
+   "devices": 5,
+   "comment": "Live TV app, plays HDMI, source picker on Input key"
+  },
+  {
+   "package": "com.tcl.suspension",
+   "devices": 5,
+   "comment": "Quick Panel"
+  },
+  {
+   "package": "com.tcl.partnercustomizer",
+   "devices": 5,
+   "comment": "carries the remote's TKey activity"
+  },
+  {
+   "package": "com.tcl.providers.config",
+   "devices": 5,
+   "comment": "TCL config provider"
+  },
+  {
+   "package": "com.tcl.smartalexa",
+   "devices": 5,
+   "comment": "TCL Alexa bridge"
+  },
+  {
+   "package": "com.google.android.play.games",
+   "devices": 5,
+   "comment": "already disabled at the factory"
+  },
+  {
+   "package": "com.google.android.videos",
+   "devices": 5,
+   "comment": "Play Movies"
+  },
+  {
+   "package": "com.tcl.gamebar",
+   "devices": 5,
+   "comment": "console game-mode overlay"
+  },
+  {
+   "package": "com.amazon.device.metrics",
+   "devices": 4,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.google.android.speech.pumpkin",
+   "devices": 4,
+   "comment": "offline speech engine for voice search"
+  },
+  {
+   "package": "com.mitv.tvhome",
+   "devices": 4,
+   "comment": ""
+  },
+  {
+   "package": "com.tcl.rc.ota",
+   "devices": 4,
+   "comment": "remote control firmware updates"
+  },
+  {
+   "package": "com.tcl.keycustomfunctionservice",
+   "devices": 4,
+   "comment": "remote key handling, fallback home"
+  },
+  {
+   "package": "com.disney.disneyplus",
+   "devices": 3,
+   "comment": "disabled on the test set"
+  },
+  {
+   "package": "com.amazon.minerva.client.api",
+   "devices": 3,
+   "comment": "protected by Fire OS"
+  },
+  {
+   "package": "com.amazon.tv.csapp",
+   "devices": 3,
+   "comment": "protected by Fire OS (customer support / help app)"
+  },
+  {
+   "package": "com.google.android.marvin.talkback",
+   "devices": 3,
+   "comment": "screen reader"
+  },
+  {
+   "package": "com.tcl.initsetup",
+   "devices": 3,
+   "comment": "setup flow"
+  },
+  {
+   "package": "com.tcl.dashboard",
+   "devices": 3,
+   "comment": "\"TCL HOME\" tile"
+  },
+  {
+   "package": "com.phorus.playfi.tv",
+   "devices": 3,
+   "comment": "Play-Fi multi-room audio; re-enables itself at every boot, see note 2"
+  },
+  {
+   "package": "com.sony.huey.dlna.module",
+   "devices": 3,
+   "comment": "DLNA renderer"
+  },
+  {
+   "package": "com.sony.huey.dlna.renderersettings",
+   "devices": 3,
+   "comment": ""
+  },
+  {
+   "package": "com.sonyericsson.dlna",
+   "devices": 3,
+   "comment": ""
+  },
+  {
+   "package": "com.tvos",
+   "devices": 3,
+   "comment": "tvos framework resources"
+  },
+  {
+   "package": "com.tcl.t_solo",
+   "devices": 3,
+   "comment": "55C728: Bluetooth \"listen alone\""
+  },
+  {
+   "package": "com.tcl.gallery",
+   "devices": 3,
+   "comment": "USB photo gallery + TCL screensaver"
+  },
+  {
+   "package": "com.xiaomi.mitv.updateservice",
+   "devices": 3,
+   "comment": "firmware updates"
+  },
+  {
+   "package": "com.mitv.milinkservice",
+   "devices": 3,
+   "comment": "Mi Cast"
+  },
+  {
+   "package": "com.mediatek.wwtv.mediaplayer",
+   "devices": 2,
+   "comment": "MMP, USB media player; re-enable to play files from USB"
+  },
+  {
+   "package": "com.oceanwing.receiver",
+   "devices": 2,
+   "comment": "remote control, Nebula IME, screen control"
+  },
+  {
+   "package": "com.oceanwing.nebulalinker",
+   "devices": 2,
+   "comment": "Nebula Connect phone app, device info, update dispatch"
+  },
+  {
+   "package": "com.mediatek.tvinput",
+   "devices": 2,
+   "comment": "HDMI input service"
+  },
+  {
+   "package": "com.mediatek.tv.service",
+   "devices": 2,
+   "comment": "TV service, Netflix key receiver"
+  },
+  {
+   "package": "com.google.android.tv.inputplayer",
+   "devices": 2,
+   "comment": "HDMI passthrough player"
+  },
+  {
+   "package": "com.tcl.factory.view",
+   "devices": 2,
+   "comment": "factory menu"
+  },
+  {
+   "package": "com.tcl.usercenter",
+   "devices": 2,
+   "comment": "TCL account"
+  },
+  {
+   "package": "com.amazon.amazonvideo.livingroom.nvidia",
+   "devices": 2,
+   "comment": "Prime Video (system copy)"
+  },
+  {
+   "package": "com.google.android.partnersetup",
+   "devices": 2,
+   "comment": "partner attribution"
+  },
+  {
+   "package": "com.nvidia.benchmarkblocker",
+   "devices": 2,
+   "comment": ""
+  },
+  {
+   "package": "com.sony.dtv.smartmediaapp",
+   "devices": 2,
+   "comment": "Media Player, plays files from USB"
+  },
+  {
+   "package": "com.sony.dtv.osat.music",
+   "devices": 2,
+   "comment": "plays music from USB"
+  },
+  {
+   "package": "screnmirroring.com",
+   "devices": 2,
+   "comment": "Screen mirroring (Miracast)"
+  },
+  {
+   "package": "com.sony.dtv.networkapp.wifidirect",
+   "devices": 2,
+   "comment": ""
+  },
+  {
+   "package": "com.tcl.messagebox",
+   "devices": 2,
+   "comment": "carries a ttvs receiver; kept to be safe"
+  },
+  {
+   "package": "com.tcl.sourcemananger",
+   "devices": 2,
+   "comment": "source/input menu"
+  },
+  {
+   "package": "com.tcl.showmode",
+   "devices": 2,
+   "comment": "sound modes"
+  },
+  {
+   "package": "com.tcl.useragreement",
+   "devices": 2,
+   "comment": "setup screens + shop-reset receiver"
+  },
+  {
+   "package": "com.tcl.browser",
+   "devices": 2,
+   "comment": "55C728: TCL browser"
+  },
+  {
+   "package": "com.tcl.channelplus",
+   "devices": 2,
+   "comment": "TCL FAST channels"
+  },
+  {
+   "package": "com.tcl.notereminder",
+   "devices": 2,
+   "comment": "note/reminder app: firmware re-enables it at every boot, so not listed"
+  },
+  {
+   "package": "com.tcl.android.webview",
+   "devices": 2,
+   "comment": "55C728: TCL's WebView (the active one is com.google.android.webview)"
+  },
+  {
+   "package": "com.tcl.magiconnectfree",
+   "devices": 2,
+   "comment": "TCL T-Cast app (needs com.tcl.ttvs)"
+  },
+  {
+   "package": "com.spocky.projengmenu",
+   "devices": 2,
+   "comment": "Projectivy Launcher: installed by the owner, not a preload; left out of the shared list"
+  },
+  {
+   "package": "com.xgimi.autokst",
+   "devices": 2,
+   "comment": "auto keystone correction"
+  },
+  {
+   "package": "com.xgimi.windowsystem",
+   "devices": 2,
+   "comment": "keystone/window service"
+  },
+  {
+   "package": "com.xgimi.tof",
+   "devices": 2,
+   "comment": "ToF autofocus"
+  },
+  {
+   "package": "com.xgimi.misckey",
+   "devices": 2,
+   "comment": "remote keys, focus/keystone shortcuts"
+  },
+  {
+   "package": "com.xgimi.uiconfiguration",
+   "devices": 2,
+   "comment": "global key receiver, power listener"
+  },
+  {
+   "package": "com.xgimi.xrmservice",
+   "devices": 2,
+   "comment": "picture/sound adaptation, brightness boost"
+  },
+  {
+   "package": "com.xgimi.xgimiservice",
+   "devices": 2,
+   "comment": "core XGIMI system service"
+  },
+  {
+   "package": "com.xgimi.overseas.xgimiatvbootwizard",
+   "devices": 2,
+   "comment": "first-boot wizard"
+  },
+  {
+   "package": "com.xiaomi.mitv.smartshare",
+   "devices": 2,
+   "comment": "Xiaomi screen share"
+  },
+  {
+   "package": "com.xiaomi.wfdsinkhelperservice",
+   "devices": 2,
+   "comment": "Miracast sink"
+  },
+  {
+   "package": "com.amazon.cast.sink",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.amazon.minitv.android.app",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.tubitv.ott",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.amazon.device.software.ota",
+   "devices": 1,
+   "comment": "protected on Fire OS 7"
+  },
+  {
+   "package": "com.amazon.device.software.ota.override",
+   "devices": 1,
+   "comment": "protected on Fire OS 7"
+  },
+  {
+   "package": "com.amazon.client.metrics",
+   "devices": 1,
+   "comment": "protected by Fire OS, cannot be disabled without root"
+  },
+  {
+   "package": "com.amazon.tv.oobe",
+   "devices": 1,
+   "comment": "out-of-box setup wizard (protected by Fire OS, cannot be disabled). If it ever is disabled it must be re-enabled before a factory reset"
+  },
+  {
+   "package": "com.droidlogic.keystone",
+   "devices": 1,
+   "comment": "keystone (picture shape) correction"
+  },
+  {
+   "package": "com.sdmc.bluetoothconnect",
+   "devices": 1,
+   "comment": "Bluetooth remote pairing wizard"
+  },
+  {
+   "package": "com.sdmc.bluetoothspeaker",
+   "devices": 1,
+   "comment": "Bluetooth speaker mode"
+  },
+  {
+   "package": "com.sdmc.oemprovisionservice",
+   "devices": 1,
+   "comment": "OEM provisioning"
+  },
+  {
+   "package": "com.oceanwing.ota",
+   "devices": 1,
+   "comment": "firmware updates (kept by owner's choice)"
+  },
+  {
+   "package": "com.zhixin.nebulasmart",
+   "devices": 1,
+   "comment": "remote events (GLOBAL_BUTTON), accessibility service"
+  },
+  {
+   "package": "com.sdmc.btservice",
+   "devices": 1,
+   "comment": "Bluetooth remote auto-pairing, speaker"
+  },
+  {
+   "package": "com.sdmc.projector",
+   "devices": 1,
+   "comment": "projector picture settings, brightness adaptation keys"
+  },
+  {
+   "package": "com.sdmc.service",
+   "devices": 1,
+   "comment": "SDMC service manager, picture, USB OTA"
+  },
+  {
+   "package": "com.zhixin.apphelper",
+   "devices": 1,
+   "comment": "McuHelper: package install helper, HTML viewer (purpose partly unclear)"
+  },
+  {
+   "package": "com.sdmc.implayer",
+   "devices": 1,
+   "comment": "USB media player; asks for TV_INPUT_HARDWARE, see header"
+  },
+  {
+   "package": "com.realtek.leanbacklauncher.partnercustomizer",
+   "devices": 1,
+   "comment": "KEEP: supplies the Inputs button on the stock Home"
+  },
+  {
+   "package": "com.nes.remoteota.six",
+   "devices": 1,
+   "comment": "Bluetooth remote firmware updater (Nanosic); pairing stays in com.nes.blerc"
+  },
+  {
+   "package": "com.google.android.tvrecommendations",
+   "devices": 1,
+   "comment": "firmware re-enables it (lastDisabledCaller: com.droidlogic), see header"
+  },
+  {
+   "package": "net.oqee.launcher",
+   "devices": 1,
+   "comment": "OQEE home screen"
+  },
+  {
+   "package": "com.mediatek.dtv.tvinput.dvbtuner",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.tcl.copydatatotv",
+   "devices": 1,
+   "comment": "data copy hook"
+  },
+  {
+   "package": "com.tcl.micmanager",
+   "devices": 1,
+   "comment": "voice"
+  },
+  {
+   "package": "com.nvidia.shield.ask",
+   "devices": 1,
+   "comment": "kept: Alexa / Google Home control"
+  },
+  {
+   "package": "com.nvidia.shield.remote.server",
+   "devices": 1,
+   "comment": "kept: SHIELD TV phone remote app"
+  },
+  {
+   "package": "com.google.android.feedback",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.ota",
+   "devices": 1,
+   "comment": "firmware updates; NVIDIA still ships security patches"
+  },
+  {
+   "package": "com.nvidia.osc",
+   "devices": 1,
+   "comment": "NVIDIA's in-game overlay"
+  },
+  {
+   "package": "com.nvidia.shield.smbserver",
+   "devices": 1,
+   "comment": "\"Transfer files over local network\" SMB share"
+  },
+  {
+   "package": "com.google.android.tv",
+   "devices": 1,
+   "comment": "Live Channels; keep it for a network tuner"
+  },
+  {
+   "package": "com.nvidia.shieldtech.hooks",
+   "devices": 1,
+   "comment": "maps an Xbox controller's Guide button to Home"
+  },
+  {
+   "package": "com.nvidia.shieldtech.proxy",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.shield.nvcustomize",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.shield.registration",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.shieldbeta",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.hotwordsetup",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.nvidia.factorybundling",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.furnaghan.android.photoscreensaver",
+   "devices": 1,
+   "comment": "third-party photo screensaver; may be one you installed:"
+  },
+  {
+   "package": "com.liskovsoft.leankeyboard",
+   "devices": 1,
+   "comment": "LeanKey keyboard (Gboard is the active one); may be one you"
+  },
+  {
+   "package": "org.droidtv.nettvregistration",
+   "devices": 1,
+   "comment": "Smart TV registration (OilProvider/StateProvider); kept on the 50PUS8517 for firmware updates -- re-enable if an update check fails"
+  },
+  {
+   "package": "org.droidtv.eum",
+   "devices": 1,
+   "comment": "e-manual; on this board there is no xtv binding to it and no retry loop at idle (checked), but the Source key is untested"
+  },
+  {
+   "package": "org.droidtv.demome",
+   "devices": 1,
+   "comment": "\"Demo me\" retail demo loop. KEPT: on this firmware it requests TV_INPUT_HARDWARE, so disable.sh refuses it (#321)"
+  },
+  {
+   "package": "com.apple.atve.androidtv.appletv",
+   "devices": 1,
+   "comment": "disabled on the test set"
+  },
+  {
+   "package": "com.mercadolibre.android.mplay_tv",
+   "devices": 1,
+   "comment": "disabled on the test set"
+  },
+  {
+   "package": "com.tianci.movieplatform",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.tianci.de",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.skyworthdigital.stb.dataprovider",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.coocaa.sky.ccapi",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.sony.dtv.b2b.vendorprotocol",
+   "devices": 1,
+   "comment": "Node.js SDDP broadcaster for Control4-style home automation"
+  },
+  {
+   "package": "com.sony.dtv.m2.seeds.iot",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.sony.dtv.m2.seeds.iot.remotestart",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.sony.dtv.voicesearch",
+   "devices": 1,
+   "comment": "Sony's voice search bridge"
+  },
+  {
+   "package": "com.sony.dtv.smarthelp",
+   "devices": 1,
+   "comment": "Help"
+  },
+  {
+   "package": "com.sony.dtv.smarthomesettings",
+   "devices": 1,
+   "comment": "\"Works with Alexa\" setup (Amazon login, runs at boot)"
+  },
+  {
+   "package": "com.zeasn.whale.saas",
+   "devices": 1,
+   "comment": "stock launcher - also ships Google Ads (doubleclick)."
+  },
+  {
+   "package": "com.tcl.common.shortcutmenu",
+   "devices": 1,
+   "comment": "custom-key/quick-start menu module"
+  },
+  {
+   "package": "com.android.vending",
+   "devices": 1,
+   "comment": "Google Play Store"
+  },
+  {
+   "package": "com.google.android.gms",
+   "devices": 1,
+   "comment": "Google Play Services"
+  },
+  {
+   "package": "com.google.android.gsf",
+   "devices": 1,
+   "comment": "Google Services Framework"
+  },
+  {
+   "package": "com.tcl.guard",
+   "devices": 1,
+   "comment": "PERSISTENT system app, also runs a package installer service"
+  },
+  {
+   "package": "com.tcl.waterfall.overseas",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "org.chromium.webview_shell",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.graymatrix.did",
+   "devices": 1,
+   "comment": "ZEE5"
+  },
+  {
+   "package": "com.kick.mobile",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.rma.speedtesttv",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.recisio.kfandroid",
+   "devices": 1,
+   "comment": "KaraFun karaoke"
+  },
+  {
+   "package": "com.tcl.logkit",
+   "devices": 1,
+   "comment": "55C728: TCL diagnostics/log collector"
+  },
+  {
+   "package": "android.autoinstalls.config.google.gtvpai",
+   "devices": 1,
+   "comment": "55C728: partner app auto-installer"
+  },
+  {
+   "package": "com.tcl.ocean.instructions",
+   "devices": 1,
+   "comment": "55C728: e-manual"
+  },
+  {
+   "package": "com.tcl.c2dm.client",
+   "devices": 1,
+   "comment": "push channel used by some TCL apps"
+  },
+  {
+   "package": "com.tcl.m",
+   "devices": 1,
+   "comment": "unidentified TCL helper; left enabled on purpose"
+  },
+  {
+   "package": "com.tcl.convergehome",
+   "devices": 1,
+   "comment": "TCL content aggregator; not the HOME app on this build"
+  },
+  {
+   "package": "com.tcl.walleve",
+   "devices": 1,
+   "comment": "TCL 小T voice assistant, plus com.tcl.walleve.aidaemon"
+  },
+  {
+   "package": "com.audiocn.karaoke.micmanager",
+   "devices": 1,
+   "comment": "mic handling for the karaoke app, plus com.tcl.micmanager"
+  },
+  {
+   "package": "com.tcl.weixin",
+   "devices": 1,
+   "comment": "WeChat on TV"
+  },
+  {
+   "package": "com.xftv.tv",
+   "devices": 1,
+   "comment": "云视听极光 (Tencent Video)"
+  },
+  {
+   "package": "com.newtv.cboxtv",
+   "devices": 1,
+   "comment": "奇异果 (iQIYI)"
+  },
+  {
+   "package": "com.xiaodianshi.tv.yst",
+   "devices": 1,
+   "comment": "小电视 (Bilibili)"
+  },
+  {
+   "package": "com.cibn.tv",
+   "devices": 1,
+   "comment": "CIBN 高清影视"
+  },
+  {
+   "package": "com.baidu.netdisk.tv",
+   "devices": 1,
+   "comment": "Baidu Netdisk"
+  },
+  {
+   "package": "com.netease.cloudmusic.tv",
+   "devices": 1,
+   "comment": "NetEase Cloud Music"
+  },
+  {
+   "package": "com.quark.yun.tv",
+   "devices": 1,
+   "comment": "Quark cloud drive"
+  },
+  {
+   "package": "com.huawei.himovceie",
+   "devices": 1,
+   "comment": "Huawei AI Life"
+  },
+  {
+   "package": "com.tcl.framework.custom",
+   "devices": 1,
+   "comment": "TCL key receiver"
+  },
+  {
+   "package": "com.tcl.appstatecontroller",
+   "devices": 1,
+   "comment": "boot/network/package receivers, purpose unclear"
+  },
+  {
+   "package": "com.eros.now",
+   "devices": 1,
+   "comment": "Eros Now: refused (\"Shell cannot change component state\"), no tile anyway"
+  },
+  {
+   "package": "com.realtek.airplay2",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.android.location.fused",
+   "devices": 1,
+   "comment": "reported to boot-loop when disabled"
+  },
+  {
+   "package": "com.google.android.onetimeinitializer",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.google.android.syncadapters.calendar",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.mediatek.speakerservice",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.mediatek.backgrounddetection",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.mediatek.support.webview",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.realtek.netflix.setting",
+   "devices": 1,
+   "comment": "Netflix ESN/config"
+  },
+  {
+   "package": "org.liskovsoft.androidtv.rukeyboard",
+   "devices": 1,
+   "comment": "Russian soft keyboard: keyboards stay on (see header)"
+  },
+  {
+   "package": "com.turkcell.ott",
+   "devices": 1,
+   "comment": "TV+; the remote's TV+ button opens its Play Store page once it is gone"
+  },
+  {
+   "package": "com.jamdeo.tv.vod",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.xgimi.tvinput",
+   "devices": 1,
+   "comment": "HDMI 1-3 TV input services"
+  },
+  {
+   "package": "com.xgimi.xhplayer",
+   "devices": 1,
+   "comment": "HDMI input player + game mode"
+  },
+  {
+   "package": "com.xgimi.bluetoothservice",
+   "devices": 1,
+   "comment": "Bluetooth remote service"
+  },
+  {
+   "package": "com.xgimi.soundermodeservice",
+   "devices": 1,
+   "comment": "Bluetooth speaker mode"
+  },
+  {
+   "package": "com.xgimi.simpservice",
+   "devices": 1,
+   "comment": "install service, purpose unclear: kept"
+  },
+  {
+   "package": "com.xgimi.autoinstall",
+   "devices": 1,
+   "comment": "purpose unclear (PermissionRequestActivity only): kept"
+  },
+  {
+   "package": "com.nbcast.wirelessscreen",
+   "devices": 1,
+   "comment": "MagiCast: the screen-mirroring receiver (\"Mogo3Pro\" in a phone's list)"
+  },
+  {
+   "package": "com.android.camera2",
+   "devices": 1,
+   "comment": ""
+  },
+  {
+   "package": "com.google.android.music",
+   "devices": 1,
+   "comment": "Google Play Music, service closed in 2020 (second unit only)"
+  },
+  {
+   "package": "com.android.companiondevicemanager",
+   "devices": 1,
+   "comment": "kept: Bluetooth companion pairing, no list on main disables it"
+  },
+  {
+   "package": "com.google.android.tts",
+   "devices": 1,
+   "comment": "text-to-speech; keep it if anything reads text aloud"
+  },
+  {
+   "package": "com.xiaomi.mi_connect_service",
+   "devices": 1,
+   "comment": "Mi Connect"
+  },
+  {
+   "package": "com.xiaomi.mitv.upgrade",
+   "devices": 1,
+   "comment": "firmware updater: kept on so updates arrive (#322)"
+  },
+  {
+   "package": "com.mitv.tvhome.mitvplus",
+   "devices": 1,
+   "comment": "Mi TV+ FAST channels"
+  },
+  {
+   "package": "com.xiaomi.mitv.mediaexplorer",
+   "devices": 1,
+   "comment": "USB media player"
+  },
+  {
+   "package": "com.mitv.videoplayer",
+   "devices": 1,
+   "comment": "Mi video player"
+  },
+  {
+   "package": "com.sohu.inputmethod.sogou.tv",
+   "devices": 1,
+   "comment": ""
+  }
+ ]
+}
