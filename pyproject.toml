@@ -34,5 +34,8 @@ tvzen = "tvzen.cli:main"
 [tool.setuptools.packages.find]
 include = ["tvzen*"]
 
+[tool.setuptools.package-data]
+tvzen = ["data/*.json"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
