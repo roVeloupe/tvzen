@@ -251,11 +251,12 @@ DB: dict[str, DbEntry] = _load_db()
 def db_stats() -> dict:
     """数据库统计（README / 报告 / 测试共用，保证口径一致）。"""
     from collections import Counter
+    known = _read_data_file("known-packages.json")
     traps = _read_data_file("keep-traps.json")
     return {
         "known_packages": len(DB),
         "keep_traps": traps["count"],
-        "source": traps["source"],
+        "source": known["source"],
         "categories": dict(Counter(e.category.value for e in DB.values())),
         "conflict_packages": sum(1 for e in DB.values()
                                  if e.kept_devices >= CONFLICT_KEEP_DEVICES),
