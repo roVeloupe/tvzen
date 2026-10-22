@@ -1,0 +1,16 @@
+🧘 TVZen 净化计划 · XR-55X90L (192.168.1.42:5555)
+   设备共 15 个包，命中 9 个可净化目标
+
+   包名                                                   类别           风险     分数
+   --------------------------------------------------------------------------------------
+   com.amazon.ahs                                       🛍️ 推广服务      安全     100
+   com.google.android.ads.tv                            📺 广告组件       安全     100
+   com.google.android.tvrecommendations                 🛍️ 推广服务      安全     100
+   com.hisense.service.ad                               📺 广告组件       安全     100
+   com.skyworth.ad                                      📺 广告组件       安全     100
+   com.tcl.tv.push                                      📡 遥测统计       安全     100
+   com.xiaomi.mitv.advertise                            📺 广告组件       安全     100
+   com.xiaomi.tv.push                                   📡 遥测统计       安全     100
+   com.vendor.analyticssdk                              📡 遥测统计       谨慎     40
+
+   汇总: 🛍️ 推广服务 2 · 📺 广告组件 4 · 📡 遥测统计 3
