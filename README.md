@@ -9,10 +9,9 @@
 *一条命令，把广告、预装垃圾和遥测请出你的电视。智能识别、随时回滚、报告可读。*
 
 [![CI](https://github.com/roVeloupe/tvzen/actions/workflows/ci.yml/badge.svg)](https://github.com/roVeloupe/tvzen/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-25%20passed-brightgreen)](#)
+[![Tests](https://img.shields.io/badge/tests-50%20passed-brightgreen)](#)
 [![Python](https://img.shields.io/badge/python-%E2%89%A53.9-blue?logo=python&logoColor=white)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
 </div>
 
@@ -24,30 +23,48 @@ Your TV boots up. A full-screen ad appears. You open the home screen — half of
 
 电视一开机是全屏广告，首页一半是商城，动不动弹推送——人人都默认"电视就是这样"，但它本不该是这样。
 
-Community scripts fix this by hardcoding package lists. **TVZen is built on a different bet**: a *suspicion-scoring engine* that combines a verified package database with name-pattern heuristics — so it keeps working on firmware it has never seen, instead of silently missing everything new.
+Community scripts fix this by hardcoding package lists. **TVZen is built on a different bet**: a *suspicion-scoring engine* that combines a real-data package database with name-pattern heuristics — so it keeps working on firmware it has never seen, instead of silently missing everything new.
 
-市面上的方案大多是"写死的包名清单"。TVZen 的赌注不同：**已知包名库 + 启发式可疑度评分**——面对从未见过的新固件，它照样能识别。
+市面上的方案大多是"写死的包名清单"。TVZen 的赌注不同：**真实数据包名库 + 启发式可疑度评分**——面对从未见过的新固件，它照样能识别。
+
+## The database is real · 数据是真的
+
+Every package in TVZen's database is parsed from **227 real per-device debloat lists** maintained by the community ([cleanyourtv](https://github.com/Gathin23/cleanyourtv), 15K+ stars) — Sony BRAVIA, TCL/FFalcon, Xiaomi, Hisense/VIDAA, Skyworth/Coocaa, Philips, NVIDIA Shield, Amazon Fire TV, projectors and more. Each entry carries:
+
+数据库里的每个包都解析自社区维护的 **227 份真实机型净化清单**（[cleanyourtv](https://github.com/Gathin23/cleanyourtv)），每条记录带三项可验证证据：
+
+| 字段 | 含义 |
+|---|---|
+| `devices` | 多少份真实清单禁用了它（如 `com.google.android.feedback`：167 台） |
+| `kept_devices` | 多少份清单**特意保留**它——社区有分歧的包自动降级为 CAUTION |
+| `comment` | 清单原文注释（如 `com.tcl.tvinput`: "Live TV tuner + HDMI inputs"） |
+
+Rebuild the database yourself: `python tools/build_package_db.py <dir-with-lists>`.
+No invented package names — if it's in the DB, a real device list disabled it.
+
+包名库可用 `tools/build_package_db.py` 从真实清单重新生成。**没有编造的包名**——库里的每个包都有真实清单佐证。
 
 ## Why not just another script · 为什么不是又一个脚本
 
 | | 常见脚本 | **TVZen** |
 |---|---|---|
-| 识别方式 | 写死的包名清单 | 已知库 + 启发式评分引擎 |
+| 识别方式 | 写死的包名清单 | 真实数据库（1140 包，带设备覆盖数）+ 启发式评分引擎 |
 | 新固件/新品牌 | 静默漏掉 | 按包名特征自动打分 |
-| 误伤风险 | 无保护，可能禁掉启动器 | never-touch 白名单 + 风险分级 |
+| 误伤风险 | 无保护，可能禁掉启动器 | never-touch 白名单（零遮蔽验证）+ 数据驱动风险分级 |
+| 分歧包处理 | 一刀切 | 被多份清单保留的包自动 CAUTION，说明禁用后果 |
 | 出问题怎么办 | 手动救砖 | 每次净化自动快照，一键回滚 |
 | 结果 | 一串终端输出 | 终端表格 / JSON / HTML 报告 |
 | 多台电视 | 一台台插线 | USB + 局域网自动发现 |
 
 ## Features · 特性
 
-- 🧠 **Suspicion-scoring engine** — verified package database **plus** name-pattern heuristics (`ads`, `promo`, `push`, `analytics`, `vmall`…). Multi-token hits score higher. Unknown firmware is not a blind spot.
-- 🛡️ **Never-touch whitelist** — launchers, system UI, Play Store, GMS core: critical components are structurally protected, no override possible.
+- 🧠 **Suspicion-scoring engine** — real-data database (1,140 packages) **plus** name-pattern heuristics (`ads`, `promo`, `push`, `analytics`, `vmall`…). Multi-token hits score higher. Unknown firmware is not a blind spot.
+- ⚖️ **Data-driven risk grading** — a package kept by ≥2 real device lists is automatically downgraded to `caution`, with the trade-off spelled out (`OTA 更新`, `直播信号源`, `桌面`, `投屏`, `输入法`…).
+- 🛡️ **Never-touch whitelist** — 48 patterns, each verified to cast zero shadow over the 1,140 real removable packages (regression-tested). Real KEEP-trap packages like `com.tcl.tvinput` ("Live TV tuner + HDMI inputs") are protected by anchored patterns.
 - 💾 **Snapshot & one-click rollback** — every clean operation writes a timestamped JSON snapshot. `tvzen rollback` puts everything back.
 - 📡 **Device discovery** — USB devices and LAN scanning (`:5555`), with concurrent probing.
 - 📊 **Human-readable reports** — terminal tables, JSON for automation, and a shareable dark-theme HTML report.
-- ⚖️ **Risk-graded targets** — `safe` vs `caution`, category filters (`ads`, `bloat`, `telemetry`, `promo`), `--safe-only` for the careful.
-- 🧪 **25 tests, CI on 4 Python versions** — the engine is unit-tested with a mock ADB runner; no TV required.
+- 🧪 **50 tests, CI on 4 Python versions** — the engine is unit-tested with a mock ADB runner; no TV required.
 
 ## Quick start · 快速开始
 
@@ -69,23 +86,30 @@ That's it. Your TV boots to a clean home screen. Run `tvzen rollback` at any tim
 
 ## What a scan looks like · 扫描长什么样
 
-Real output format from the engine (device data simulated):
+Real engine output on the real package set of a Sony BRAVIA 4K GB (from the community list; see [`docs/scan-example.txt`](./docs/scan-example.txt) and a [live HTML report](./docs/report-example.html)):
 
 ```
-🧘 TVZen 净化计划 · XR-55X90L (192.168.1.42:5555)
-   设备共 15 个包，命中 9 个可净化目标
+🧘 TVZen 净化计划 · Sony BRAVIA 4K GB（模拟）
+   设备共 39 个包，命中 31 个可净化目标
 
-   包名                                                   类别           风险     分数
-   --------------------------------------------------------------------------------------
-   com.amazon.ahs                                       🛍️ 推广服务      安全     100
-   com.google.android.ads.tv                            📺 广告组件       安全     100
-   com.google.android.tvrecommendations                 🛍️ 推广服务      安全     100
-   com.xiaomi.tv.push                                   📡 遥测统计       安全     100
-   com.xiaomi.mitv.advertise                            📺 广告组件       安全     100
-   com.vendor.analyticssdk                              📡 遥测统计       谨慎     40
+   包名                                   类别           风险     分数
+   ----------------------------------------------------------------------
+   tv.samba.ssm                            📡 遥测统计       安全     100
+   com.sony.dtv.sonyselect                 📺 广告组件       安全     100
+   com.sony.dtv.promos                     📺 广告组件       安全     100
+   com.sony.dtv.demomode                   🗑️ 预装推广      安全     100
+   com.google.android.feedback             📡 遥测统计       安全     100
+   com.google.android.tvrecommendations    🛍️ 推广服务      安全     100
+   com.google.android.apps.mediashell      🗑️ 预装推广      谨慎     100
+   com.google.android.play.games           🗑️ 预装推广      谨慎     100
+   com.google.android.tvlauncher           📺 广告组件       谨慎     100
+   com.google.android.videos               🗑️ 预装推广      谨慎     100
    ...
-   汇总: 🛍️ 推广服务 2 · 📺 广告组件 4 · 📡 遥测统计 3
 ```
+
+Note how the packages the community deliberately keeps (Chromecast, Play Games, the stock launcher) come out as **caution**, not safe — that grading comes from the data, not from vibes.
+
+注意看：社区特意保留的包（Chromecast、Play Games、原生桌面）全部被判为**谨慎**——这个分级来自数据，不是拍脑袋。
 
 ## Command reference · 命令参考
 
@@ -106,13 +130,13 @@ tvzen scan
    │
    ├─ adb shell pm list packages ──► 全量包列表
    │
-   ├─ never-touch whitelist ──────► 关键组件 → CRITICAL（结构性保护）
+   ├─ never-touch whitelist ──────► 关键组件 → CRITICAL（结构性保护，零遮蔽）
    │
-   ├─ known package database ────► 命中 → 100 分（高置信度）
+   ├─ real package database ─────► 命中 → 100 分 + 设备覆盖数佐证
+   │                                 └─ kept ≥2 台 / 系统功能 / 用户应用 → CAUTION
    │
    └─ heuristic token scoring ───► 未命中库 → 按名称特征打分 ≥40 才纳入
                                         （多 token 命中加权）
-   │
    ▼
    净化计划（分类 / 风险 / 分数 / 原因）→ clean（默认禁用 + 快照）
 ```
@@ -123,17 +147,18 @@ Disable-by-default (`pm disable-user --user 0`) is deliberately chosen over unin
 
 ## Safety · 安全设计
 
-- **Whitelist first**: anything matching `launcher` / `systemui` / `settings` / `vending` / `gms`… is marked CRITICAL before any other rule runs.
+- **Whitelist first, with zero shadowing**: critical components are protected before any other rule runs — and a regression test asserts no whitelist pattern ever marks one of the 1,140 real removable packages as CRITICAL.
+- **Conflict-aware grading**: packages the community disagrees about are never silently removed; they surface as `caution` with the reason.
 - **Snapshot before every clean**: `~/.tvzen/snapshots/tvzen-<serial>-<timestamp>.json`.
 - **Scan is read-only**: `tvzen scan` never touches the device. Run it first, always.
 - **Open process**: every verdict carries its reason and matched rule — nothing is silently removed.
 
 ## Roadmap · 路线图
 
-- [x] Core engine: known DB + heuristics + whitelist
+- [x] Core engine: real-data DB + heuristics + whitelist
 - [x] Snapshot / rollback
 - [x] Terminal / JSON / HTML reports
-- [x] CI (4 Python versions, 25 tests)
+- [x] CI (4 Python versions, 50 tests)
 - [ ] Desktop GUI (Tauri) with device discovery UI
 - [ ] Community package-database contributions via PR
 - [ ] Fire TV & Sony/Philips/TCL firmware coverage expansion
