@@ -212,3 +212,21 @@ class TestScan:
     def test_scan_is_deduplicated(self):
         result = scan_packages(["com.a.ads", "com.a.ads"])
         assert len(result.verdicts) == 1
+
+
+class TestDbStats:
+    """db_stats 与 CLI db 命令的一致性。"""
+
+    def test_stats_shape(self):
+        stats = db_stats()
+        assert set(stats) >= {"known_packages", "keep_traps", "conflict_packages",
+                              "never_touch_patterns", "heuristic_tokens", "categories"}
+        assert sum(stats["categories"].values()) == stats["known_packages"]
+
+    def test_cli_db_command(self, capsys):
+        from tvzen.cli import build_parser
+        rc = build_parser().parse_args(["db"]).func(
+            build_parser().parse_args(["db"]))
+        assert rc == 0
+        out = capsys.readouterr().out
+        assert "1140" in out and "cleanyourtv" in out
