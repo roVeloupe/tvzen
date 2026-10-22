@@ -1,16 +1,38 @@
-🧘 TVZen 净化计划 · XR-55X90L (192.168.1.42:5555)
-   设备共 15 个包，命中 9 个可净化目标
+🧘 TVZen 净化计划 · Sony BRAVIA 4K GB（模拟） (simulated)
+   设备共 39 个包，命中 31 个可净化目标
 
    包名                                                   类别           风险     分数
    --------------------------------------------------------------------------------------
-   com.amazon.ahs                                       🛍️ 推广服务      安全     100
-   com.google.android.ads.tv                            📺 广告组件       安全     100
+   android.autoinstalls.config.sony.bravia              📺 广告组件       安全     100
+   com.google.android.feedback                          📡 遥测统计       安全     100
+   com.google.android.tv.bugreportsender                📡 遥测统计       安全     100
    com.google.android.tvrecommendations                 🛍️ 推广服务      安全     100
-   com.hisense.service.ad                               📺 广告组件       安全     100
-   com.skyworth.ad                                      📺 广告组件       安全     100
-   com.tcl.tv.push                                      📡 遥测统计       安全     100
-   com.xiaomi.mitv.advertise                            📺 广告组件       安全     100
-   com.xiaomi.tv.push                                   📡 遥测统计       安全     100
-   com.vendor.analyticssdk                              📡 遥测统计       谨慎     40
+   com.qterics.da.product                               📡 遥测统计       安全     100
+   com.sony.dtv.b2b.vendorprotocol                      📡 遥测统计       安全     100
+   com.sony.dtv.bivlinfo                                📺 广告组件       安全     100
+   com.sony.dtv.customersupport                         🗑️ 预装推广      安全     100
+   com.sony.dtv.da.service                              📡 遥测统计       安全     100
+   com.sony.dtv.demomode                                🗑️ 预装推广      安全     100
+   com.sony.dtv.demosupport                             🗑️ 预装推广      安全     100
+   com.sony.dtv.discovery                               📺 广告组件       安全     100
+   com.sony.dtv.imanual                                 🗑️ 预装推广      安全     100
+   com.sony.dtv.multiscreendemo                         🗑️ 预装推广      安全     100
+   com.sony.dtv.promos                                  📺 广告组件       安全     100
+   com.sony.dtv.smarthelp                               🗑️ 预装推广      安全     100
+   com.sony.dtv.sonybugreportsys                        📡 遥测统计       安全     100
+   com.sony.dtv.sonyselect                              📺 广告组件       安全     100
+   com.sony.dtv.tvlaunchercustomizer                    📺 广告组件       安全     100
+   tv.samba.ssm                                         📡 遥测统计       安全     100
+   com.google.android.apps.mediashell                   🗑️ 预装推广      谨慎     100
+   com.google.android.backdrop                          🗑️ 预装推广      谨慎     100
+   com.google.android.play.games                        🗑️ 预装推广      谨慎     100
+   com.google.android.tvlauncher                        📺 广告组件       谨慎     100
+   com.google.android.videos                            🗑️ 预装推广      谨慎     100
+   com.google.android.youtube.tvmusic                   🗑️ 预装推广      谨慎     100
+   com.sony.dtv.networkapp.wifidirect                   🗑️ 预装推广      谨慎     100
+   com.sony.dtv.osat.music                              🗑️ 预装推广      谨慎     100
+   com.sony.dtv.smartmediaapp                           🗑️ 预装推广      谨慎     100
+   com.sony.huey.dlna.module                            🗑️ 预装推广      谨慎     100
+   screnmirroring.com                                   🗑️ 预装推广      谨慎     100
 
-   汇总: 🛍️ 推广服务 2 · 📺 广告组件 4 · 📡 遥测统计 3
+   汇总: 📺 广告组件 7 · 📡 遥测统计 7 · 🛍️ 推广服务 1 · 🗑️ 预装推广 16
